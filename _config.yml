@@ -62,13 +62,13 @@ notification: |-
 social:
  - name: Github
    icon: git
-   href: //github.com/shenliyang
+   href: //github.com/wekri
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
+   href: mailto:wekri@qq.com
  - name: 联系QQ
    icon: qq
-   href: /
+   href: http://wpa.qq.com/msgrd?v=3&uin=519299972&site=qq&menu=yes
  - name: 微博
    icon: weibo
    href: /
@@ -92,7 +92,7 @@ arch_config:
 
 ## 友链设置
 links:
-  - 个人博客: http://www.shenliyang.com
+  - 个人博客: http://blog.csdn.net/eacter
 
 
 # 主题自定义个性化配置
@@ -127,7 +127,7 @@ declaration:
   enable: true
   title: '转载声明'
   tip: |-
-      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+      商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://wekri.com" target="_blank">wekri</a>
 
 
 ## 主题评论
@@ -160,7 +160,7 @@ disqus:
 ## 网站访问统计
 
 ### 网盟CNZZ统计
-cnzz_analytics: 1263868967
+cnzz_analytics: 1271973342
 
 ### 百度统计
 baidu_analytics: 
