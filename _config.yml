@@ -3,7 +3,7 @@
 #   language: zh-CN
 # ---------------------------------------------------------------
 
-## menu 
+## menu
 menu:
 - page: home
   url: /
@@ -17,30 +17,32 @@ menu:
 - page: 归档
   url: /archives/
   icon:
-#- page: 前端
-#  url: /categories/前端/
-#  icon:
-#- page: 后端
-#  url: /categories/后端/
-#  icon:
-#- page: 工具
-#  url: /categories/工具/
-#  icon:
-#- page: 资源
-#  url: /categories/资源/
-#  icon:
+  icon:
+- page: 前端
+  url: /categories/前端/
+  icon:
+- page: 后端
+  url: /categories/后端/
+  icon:
+- page: 工具
+  url: /categories/工具/
+  icon:
+- page: 时间轴
+  url: /archives/
+  icon:
 
-## favicon 
+## favicon
 favicon: /favicon.ico
 
-## Feed 
+## Feed
 rss: /atom.xml
 
 
 # 各个小工具的设置
+
 ## widgets
 widgets:
-#  - search
+  - search
   - notification
   - social
   - category
@@ -73,15 +75,12 @@ social:
    href: //github.com/wekri
  - name: 邮箱
    icon: envelope-o
-   href: mailto:wekri@qq.com
+   href: mailto:snippet@91h5.cc
  - name: 联系QQ
    icon: qq
    href: http://wpa.qq.com/msgrd?v=3&uin=519299972&site=qq&menu=yes
  - name: 微博
    icon: weibo
-   href: /
- - name: QQ群
-   icon: users
    href: /
  - name: RSS
    icon: feed
@@ -110,17 +109,23 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg
+    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg
+
+## 首页列表底部面板
+homePanel: true
 
 ## 缩略图自定义随机图片
 defaultImgs:
-  - 
+  -
 
 ## 截取文章首页描述字数
 excerptLength: 120
 
 ## 代码高亮配置
-highlightTheme: 
+highlightTheme:
+
+## bootstrap配置
+bootstrap:
 
 ## ICON配置
 fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
@@ -143,10 +148,10 @@ declaration:
 ### gitment
 gitment:
   enable: false
-  owner: 
-  repo: 
-  client_id: 
-  client_secret: 
+  owner:
+  repo:
+  client_id:
+  client_secret:
   perPage: 10
 
 ### 来必力
@@ -154,7 +159,7 @@ livere:
   enable: true
   livere_uid: MTAyMC8zMzA4Ny85NjQ4
 
-### 友言评论
+### 友言评论(服务不稳定)
 uyan:
   enable: false
   uyan_id: 1966422
@@ -165,19 +170,25 @@ disqus:
   shortname: snippet
   count: false
 
+### 畅言评论(需要ICP备案)
+changyan:
+  enable: true
+  appid: cyt8KmUC1
+  conf: prod_855a68d3b3d91855360a6215672a505a
+
 ## 网站访问统计
 
 ### 网盟CNZZ统计
 cnzz_analytics: 1271973342
 
 ### 百度统计
-baidu_analytics: 
+baidu_analytics:
 
 ### 谷歌统计
-google_analytics: 
+google_analytics:
 
 ### 腾讯分析
-tencent_analytics: 
+tencent_analytics:
 
 ### 百度文章推送
 baidu_push:

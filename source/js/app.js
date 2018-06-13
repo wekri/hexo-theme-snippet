@@ -10,17 +10,8 @@ window.onload = function() {
         $commentsCounter = document.getElementById('comments-count'),
         $gitcomment = document.getElementById("gitcomment"),
         $backToTop = document.getElementById("back-to-top"),
+        $toc = document.getElementById("article-toc"),
         timer = null;
-
-    //手机菜单导航
-    $mnav.onclick = function(){  
-        var navOpen = $mainMenu.getAttribute("class");
-        if(navOpen.indexOf("in") != '-1'){
-            $mainMenu.setAttribute("class","collapse navbar-collapse"); 
-        } else {
-            $mainMenu.setAttribute("class","collapse navbar-collapse in");
-        }
-    };
 
     //设备判断
     var isPC = true;
@@ -30,19 +21,19 @@ window.onload = function() {
             return m ? m[1] : '';
         }
         if (/iphone|ios|android|ipod/i.test(navigator.userAgent.toLowerCase()) == true && params(location.search, "from") != "mobile") {
-            var mainWidth = document.body.clientWidth;
-            var fontSize = mainWidth / designPercent + 'px';
-            document.documentElement.style.fontSize = fontSize;
-            window.onresize = function() {
-                var mainWidth = document.body.clientWidth;
-                fontSize = mainWidth / designPercent + 'px';
-                document.documentElement.style.fontSize = fontSize;
-            };
             isPC = false;
+        }
+    })();
+
+    //手机菜单导航
+    $mnav.onclick = function(){
+        var navOpen = $mainMenu.getAttribute("class");
+        if(navOpen.indexOf("in") != '-1'){
+            $mainMenu.setAttribute("class","collapse navbar-collapse");
         } else {
-        	document.documentElement.style.fontSize = '610%'
-        };
-    })(450 / 100);
+            $mainMenu.setAttribute("class","collapse navbar-collapse in");
+        }
+    };
 
     //首页文章图片懒加载
     function imgsAjax($targetEles) {
@@ -89,6 +80,19 @@ window.onload = function() {
 
     //监听滚动事件
     window.addEventListener('scroll', function() {
+        if($toc){
+            var top = $toc.offsetTop;
+            var left = $toc.offsetLeft;
+            var width = $toc.offsetWidth;
+            if(getScrollTop() <= top){
+                $toc.style = "";
+            } else {
+                $toc.style.position = "fixed";
+                $toc.style.top = "5px";
+                $toc.style.left = left + "px";
+                $toc.style.width = width + "px"
+            }
+        }
         clearTimeout(timer);
         timer = setTimeout(function fn() {
             scrollCallback();
