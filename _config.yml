@@ -74,7 +74,7 @@ social:
    href: //github.com/wekri
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
+   href: mailto:wekri@qq.com
  - name: 联系QQ
    icon: qq
    href: http://wpa.qq.com/msgrd?v=3&uin=519299972&site=qq&menu=yes
@@ -98,7 +98,7 @@ arch_config:
 
 ## 友链设置
 links:
-  - 个人博客: http://blog.csdn.net/eacter
+  - CSDN博客: http://blog.csdn.net/eacter
 
 
 # 主题自定义个性化配置
@@ -108,7 +108,7 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg
+    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg
 
 ## 首页列表底部面板
 homePanel: true
@@ -131,7 +131,7 @@ fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
 
 ## 文章过期提醒功能
 warning:
-  days: 300
+  days: 900
   text: '本文于%d天之前发表，文中内容可能已经过时。'
 
 ## 文章内声明
