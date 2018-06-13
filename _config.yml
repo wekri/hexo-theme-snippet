@@ -155,7 +155,7 @@ gitment:
 
 ### 来必力
 livere: 
-  enable: true
+  enable: false
   livere_uid: MTAyMC8zMzA4Ny85NjQ4
 
 ### 友言评论(服务不稳定)
@@ -171,9 +171,9 @@ disqus:
 
 ### 畅言评论(需要ICP备案)
 changyan:
-  enable: false
-  appid: cyt8KmUC1
-  conf: prod_855a68d3b3d91855360a6215672a505a
+  enable: true
+  appid: cytFbjWUJ
+  conf: prod_74a7bae0e350931ba1210284f17d9cf7
 
 ## 网站访问统计
 
