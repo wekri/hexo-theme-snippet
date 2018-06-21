@@ -12,7 +12,7 @@ menu:
 #  url: /categories/
 #  icon:
 - page: 标签
-  url: /tagcloud/
+  url: /tags
   icon:
 #- page: 归档
 #  url: /archives/
