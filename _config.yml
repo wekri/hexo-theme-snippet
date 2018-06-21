@@ -5,15 +5,15 @@
 
 ## menu
 menu:
-- page: home
+- page: 主页
   url: /
   icon:
 #- page: 分类
 #  url: /categories/
 #  icon:
-#- page: 标签
-#  url: /tagcloud/
-#  icon:
+- page: 标签
+  url: /tagcloud/
+  icon:
 #- page: 归档
 #  url: /archives/
 #  icon:
@@ -24,7 +24,7 @@ menu:
 #  url: /categories/后端/
 #  icon:
 #- page: 工具
-#  url: /categories/工具/
+#  url: /categories/tools/
 #  icon:
 - page: 时间轴
   url: /archives/
