@@ -1,7 +1,4 @@
-# ---------------------------------------------------------------
-#   Site Information And Theme Configuration Settings
 language: zh-CN
-# ---------------------------------------------------------------
 
 ## menu
 menu:
@@ -83,18 +80,18 @@ social:
  - name: 联系QQ
    icon: qq
    href: http://wpa.qq.com/msgrd?v=3&uin=519299972&site=qq&menu=yes
- - name: 微博
-   icon: weibo
-   href: /
- - name: 微信
-   icon: weixin
-   href: /
- - name: QQ群
-   icon: users
-   href: /
- - name: RSS
-   icon: feed
-   href: /atom.xml
+# - name: 微博
+#   icon: weibo
+#   href: /
+# - name: 微信
+#   icon: weixin
+#   href: /
+# - name: QQ群
+#   icon: users
+#   href: /
+# - name: RSS
+#   icon: feed
+#   href: /atom.xml
 
 ## 文章分类设置
 cate_config:
@@ -110,7 +107,7 @@ arch_config:
 
 ## 标签云设置
 tagcloud:
-  tag3d: false
+  tag3d: true
   textColour: '#444'
   outlineMethod: 'block'
   outlineColour: '#FFDAB9'
@@ -210,7 +207,7 @@ changyan:
 
 ## Valine评论
 valine:
-   enable: true
+   enable: false
    appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
    appKey: erIpQac4azoCmgfBB7Dl9maa
    placeholder: 说点什么吧
