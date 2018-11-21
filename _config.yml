@@ -107,7 +107,7 @@ arch_config:
 
 ## 标签云设置
 tagcloud:
-  tag3d: true
+  tag3d: false
   textColour: '#444'
   outlineMethod: 'block'
   outlineColour: '#FFDAB9'
