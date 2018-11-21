@@ -207,8 +207,7 @@ pre {
     width: 100%;
     background:@white_color url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
     background-repeat: repeat;
-    background-attachment: fixed;
-    overflow:hiddle;
+    overflow: hidden;
     .banneriframe {
         width: 100%;
         height: 100%;
@@ -248,11 +247,9 @@ pre {
 	                text-decoration: none;
             	}
         	}
-
         }
     }
 }
-
 .home-template {
     .main-header {
         padding-top: 62px;
@@ -269,8 +266,19 @@ pre {
     text-align: center;
     background:  @white_color;
     .border-top(#ebebeb);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     border-bottom: 2px solid #e1e1e1;
+    .navbar-collapse{
+        border-top:1px solid #ebebeb
+    }
+    .navbar-brand{
+        max-width: 90%;
+        .text-ellipsis();
+        padding:19px 0 0 0;
+        font-size:14px;
+        color:@grey5_color;
+        display:none;
+    }
     .menu {
         padding: 0;
         margin: 0;
@@ -337,12 +345,12 @@ pre {
             line-height: 56px;
             font-size: 2em;
             cursor: pointer;
+            &:hover{
+                color: @theme_color
+            }
         }
     }
-
-
 }
-
 
 /*====================================================
     main post area
@@ -350,6 +358,7 @@ pre {
 #main{
     background: @white_color;
     padding:10px 0;
+    margin-bottom: 10px;
 }
 .post {
     padding: 20px;
@@ -764,6 +773,50 @@ pre {
     padding: 20px;
     margin-bottom:20px;
 }
+#comments .v{
+    .vheader{
+        .vinput{
+            border:none;
+            .border-bottom(#f0f0f0);
+            .border-radius(0);
+            font-size: .9em;
+            .transition();
+            &:focus {
+                .border-bottom(@theme_color);
+            }
+            &:hover {
+                .border-bottom(@theme_color);
+            }
+        }
+    }
+    .veditor{
+        font-size:1em;
+    }
+    .vcontrol{
+        .vbtn{
+            .border-radius();
+            padding: .5rem 2rem;
+            color: @grey8_color;
+            &:hover{
+               color: @theme_color;
+               border-color: @theme_color;
+            }
+        }
+    }
+    .item3{
+        input{
+            width:31%;
+            margin:0 1%;
+        }
+    }
+    .item2{
+        input{
+            width:48%;
+            margin:0 1%;
+        }
+    }
+}
+
 /* prev and next link */
 .prev-next-wrap {
     margin-bottom: 25px;
@@ -783,10 +836,14 @@ pre {
             padding: 0;
             li {
                 list-style: none;
+                &.archive-list-item{
+                    width: 50%;
+                    display: inline-block;
+                }
             }
         }
         .archive-list-count , .category-list-count{
-            margin-left:5px;
+            margin-left: 4px;
             &:before {
                 content: "(";
             }
@@ -834,11 +891,12 @@ pre {
             font-size:1em!important;
             line-height: 1.5em;
             display: inline-block;
-            margin: 0 7px 7px 0;
+            margin: 0 5px 5px 0;
             .transition;
+            .text-ellipsis();
             &:hover {
                 color: @white_color;
-                background: @theme_color;
+                background-color: @theme_color;
                 .border(@theme_color);
                 text-decoration: none;
             }
@@ -866,6 +924,7 @@ pre {
             font-size: 20px;
         }
     }
+
     .friends-link {
         a {
             margin-right:15px
@@ -978,6 +1037,50 @@ pre {
             }
         }
     }
+
+    .notification {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+/*====================================================
+   toc
+====================================================*/
+#article-toc {
+    padding-top: 1em;
+    background-color: @white_color;
+    top: 0;
+    bottom: 70px;
+    overflow-y: auto;
+    ol {
+        list-style:none;
+    }
+    .toc{
+         padding-left:2em;
+        .toc-item {
+            .toc-link{
+                display: block;
+                color: @black3_color;
+                text-decoration: none;
+                padding: 4px 0;
+                line-height: 1.25em;
+                position: relative;
+                width: 100%;
+                .text-ellipsis();
+                &:hover{
+                    color:@theme_color;
+                    .transition(.15s);
+                }
+            }
+            &.toc-level-2{
+                &>.toc-link{
+                    font-size:15px;
+                }
+            }
+        }
+    }
 }
 
 /*====================================================
@@ -999,26 +1102,6 @@ pre {
     }
 }
 
-/*====================================================
-   toc
-====================================================*/
-#article-toc {
-    padding-top:1em;
-    background-color:@white_color;
-    .toc-link{
-        display: block;
-        color: @black3_color;
-        text-decoration: none;
-        padding: 5px 0;
-        line-height: 1;
-        position: relative;
-        width: 100%;
-        .text-ellipsis();
-        &:hover{
-            color:@theme_color;
-        }
-    }
-}
 /*====================================================
    back-to-top and toc-btn
 ====================================================*/
@@ -1047,6 +1130,12 @@ pre {
 }
 
 /*====================================================
+    post reward
+====================================================*/
+
+@import "_reward";
+
+/*====================================================
     timeline
 ====================================================*/
 
@@ -1059,11 +1148,20 @@ pre {
 @import "_highlight";
 
 /*====================================================
+    scrollbar
+====================================================*/
+
+@import "_scrollbar";
+
+/*====================================================
     media
 ====================================================*/
 @media screen and (max-width: 767px) {
     .main-navigation {
         text-align: left;
+        .navbar-brand{
+            display: block;
+        }
         .menu {
             li {
                 display: block;

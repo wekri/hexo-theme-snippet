@@ -5,14 +5,17 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 如果本主题也是你喜欢的菜，请动动手指 [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers) 支持一下
 
 [![Build Status](https://www.travis-ci.org/shenliyang/hexo-theme-snippet.svg?branch=master)](https://www.travis-ci.org/shenliyang/hexo-theme-snippet)
+[![Read the Docs](https://img.shields.io/readthedocs/pip/stable.svg)](https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md)
 [![codebeat badge](https://codebeat.co/badges/6ef2dcd2-af90-40e0-9628-ac689441f774)](https://codebeat.co/projects/github-com-shenliyang-hexo-theme-snippet-master)
 [![mnt-image](https://img.shields.io/maintenance/yes/2018.svg)](../../commits/master)
+[![ImgBot](https://img.shields.io/badge/ImgBot-build-brightgreen.svg)]()
 [![hexo version](https://img.shields.io/badge/hexo-%3E%3D%203.0-blue.svg)](http://hexo.io)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/shenliyang/hexo-theme-snippet/blob/master/LICENSE)
 
-[主题预览 Demo](http://shenliyang.github.io)
 
-![hexo-theme-snippet](http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/snippet-screenshots1000.jpg)
+[主题Demo戳这里](http://shenliyang.github.io?rf=gh-demo)
+
+![hexo-theme-snippet](http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/snippet-screenshots1000.jpg "Snippet主题")
 
 
 ## 主题特点
@@ -25,10 +28,11 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 - [x] 首页图片懒加载
 - [x] 首页文章缩略图自动检索文章内图片，支持自动随机图片
 - [x] 主题支持响应式
+- [x] 支持3D云标签
+- [x] 支持文章推送和文章打赏
 - [x] 站内本地搜索和谷歌搜索
 - [x] 支持多个第三方评论系统
-- [x] 版权信息可配置
-- [x] 支持网站统计和文章推送
+- [x] 支持网站统计和不蒜子访客统计
 - [x] 移动端的简洁设计
 - [x] 支持代码高亮并支持自定义高亮样式
 - [x] 支持Shell脚本一键使用Travis CI自动化部署博客
@@ -37,6 +41,9 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 # **基础篇**
 
 > 如果你在此之前使用的是 `Hexo 2.x` 版本，为了避免未知的错误，请备份好数据，或者建立新的博客目录
+
+>"主题目录" => `themes\hexo-theme-snippet`, "Hexo根目录" => 项目主目录;
+"主题配置" => `themes\hexo-theme-snippet\_config.yml`, "Hexo配置" => 项目主目录下`_config.yml`
 
 ### 1. 环境搭建
 
@@ -51,7 +58,7 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 
 2. Git方式，在Hexo根目录执行：
 ``` bash
-    git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/snippet
+git clone git://github.com/shenliyang/hexo-theme-snippet.git themes/hexo-theme-snippet
 ```
 
 ### 3. 安装主题插件
@@ -60,49 +67,51 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 进行功能的开发，以下为必装插件：
 
 ``` bash
-    npm install hexo-renderer-ejs --save
-    npm install hexo-renderer-less --save
-    npm install hexo-deployer-git --save
+npm i hexo-renderer-ejs hexo-renderer-less hexo-deployer-git -S
 ```
 
 ### 4. 部署主题
 
-> 如果没有更改过主题源文件可以跳过1,2步骤
+> 如果没有更改过主题源文件,也不需要代码优化可以跳过1,2,3步骤
 
 
-1. Gulp打包构建，压缩优化部署前的代码。  [Gulp入门指南](http://www.gulpjs.com.cn/docs/getting-started/)
+1. gulp打包构建，拷贝主题目录下`package.json`文件到Hexo根目录下，然后安装项目的开发依赖。  [Gulp入门指南](http://www.gulpjs.com.cn/docs/getting-started/)
 ``` bash
-    npm install   //安装项目依赖
+npm i   //安装项目依赖
 ```
 
-2. 拷贝gulpfile.js文件到项目根目录下(非主题目录)
+2. 在Hexo根目录下创建一个名为 gulpfile.js 的文件：
 ``` bash
-    gulp 或者 gulp default   //执行打包任务
+require('./themes/hexo-theme-snippet/gulpfile');
 ```
 
-3. 清空hexo静态文件和缓存，并重新生成
+3. 运行 gulp：
 ``` bash
-    hexo clean && hexo g  //清空缓存并生成静态文件
+gulp 或者 gulp default   //执行打包任务
 ```
 
-4. 本地预览，确没有问题再进行发布
+4. 清空hexo静态文件和缓存，并重新生成
 ``` bash
-    hexo s -p 4000 或者 hexo s  //启动本地服务默认
+hexo clean && hexo g  //清空缓存并生成静态文件
 ```
 
-5. 当gulp执行完成，并提示  `please execute： hexo d` 时，可以进行发布
+5. 本地预览，确没有问题再进行发布
 ``` bash
-    hexo d 或者 gulp deploy  //部署发布
+hexo s -p 4000 或者 hexo s  //启动本地服务默认
 ```
 
+6. 当gulp执行完成，并提示  `please execute： hexo d` 时，可以进行发布
+``` bash
+hexo d 或者 gulp deploy  //部署发布
+```
 
 ### 5. 更新主题
 
 主题可能会不定时优化和更新，更新主题代码：
 
 ``` bash
-    cd themes/snippet
-    git pull
+cd themes/hexo-theme-snippet
+git pull
 ```
 
 # **主题篇**
@@ -113,9 +122,9 @@ Snippet 简洁而不简单，也许是一款你寻找已久hexo主题。
 
 ## menu -- 导航菜单显示{[@page:名字,@url:地址,@icon:图标]}
 menu:
-- page: home
-  url: /
-  icon: fa-home
+  - page: home
+    url: /
+    icon: fa-home
 
 ## favicon -- 网站图标位置{@favicon}
 favicon: /favicon.ico
@@ -128,13 +137,13 @@ rss: /atom.xml
 
 ## widgets -- 6个左边小工具{@widgets:[notification,category,archive,tagcloud,friends]}
 widgets:
-- search
-- notification
-- social
-- category
-- archive
-- tagcloud
-- friends
+  - search
+  - notification
+  - social
+  - category
+  - archive
+  - tagcloud
+  - friends
 
 # 各个小工具的设置
 
@@ -157,9 +166,9 @@ notification: |-
 
 ## 社交设置{@name:社交工具名字，@icon:社交工具图标，@href:设置工具链接} [参考图标](http://fontawesome.io/icons/)
 social:
- - name: Github
-   icon: git
-   href: //github.com/shenliyang
+  - name: Github
+    icon: git
+    href: //github.com/shenliyang
 
 ## 文章分类设置{@cate_config:{@show_count:是否显示数字，@show_current: 是否高亮当前category}}
 cate_config:
@@ -167,14 +176,28 @@ cate_config:
    show_current: true
 
 ## 文章归档设置{@arch_config:/*参数参考：https://hexo.io/zh-cn/docs/helpers.html#list-archives*/}
+## 推荐组合方式：[{type: 'monthly',format: 'YYYY年MM月'},{type: 'yearly',format: 'YYYY年'}]
 arch_config:
    type: 'monthly'
+   format: 'YYYY年MM月'
    show_count: true
    order: -1
 
+## 标签云设置{/*参数参考：http://www.goat1000.com/tagcanvas-options.php */}
+tagcloud:
+  tag3d: false // 是否启用3D标签云
+  textColour: '#444' // 字体颜色
+  outlineMethod: 'block' // 选中模式(outline|classic|block|colour|size|none)
+  outlineColour: '#FFDAB9' // 选中模式的颜色
+  interval: 30 // 动画帧之间的时间间隔，值越大，转动幅度越大
+  freezeActive: true // 选中的标签是否继续滚动
+  frontSelect: true // 不选标签云后部的标签
+  reverse: true // 是否反向触发
+  wheelZoom: false // 是否启用鼠标滚轮
+
 ## 友链设置{@链接名称：链接地址{@links:[,,,]}}
 links:
-    - 主题作者: http://www.shenliyang.com
+  - Hexo官网: https://hexo.io/zh-cn/
 
 
 # 主题自定义个性化配置
@@ -184,7 +207,12 @@ branding: 从未如此简单有趣
 
 ## 设置banner背景图片{@img:imgUrl自定义图片地址,主题默认{"静态背景":"banner.jpg"},{"动态背景":"banner2.jpg"}}
 banner:
-    img: imgUrl
+  img: imgUrl
+
+## 设置carousel{@img:图片地址,@url:点击跳转链接(默认值:"javascript:")}
+carousel:
+  img: 'img/head-img.jpg'
+  url: 'javascript:'
 
 ## 首页列表底部面板{@homePanel: 是否开启}
 homePanel: true
@@ -202,6 +230,9 @@ defaultImgs:
 ### 自动截取摘要{@excerptLength:自动截取文章前多少个字为摘要，不配置默认：120字}
 excerptLength: 120
 
+## 是否开启文章目录
+toc: true
+
 ## 代码高亮配置{@highlightTheme: 主题名称,(配置暂时不可用，后续开发中…)}
 
 highlightTheme: default //TODO
@@ -217,6 +248,12 @@ declaration:
   title: '转载声明'
   tip: |-
       商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+
+## 文章打赏{@reward: {alipay:支付宝打赏,wepay:微信打赏,tip:打赏提示语; 链接都为空,关闭打赏功能}}
+reward:
+  alipay: ''
+  wepay: '../img/reward-wepay.jpg'
+  tip: 赞赏是不耍流氓的鼓励
 
 
 ## 主题评论
@@ -254,6 +291,22 @@ changyan:
   appid:
   conf:
 
+### Valine评论 参考网站: [valine评论](https://valine.js.org/)
+valine:
+  enable: true
+  appId:
+  appKey:
+  placeholder: 说点什么吧
+  notify: false // 邮件通知
+  verify: false // 验证码
+  avatar: mm // avatar头像
+  meta: nick,mail // 输入框内容，可选值nick,mail,link
+  pageSize: 10
+
+## 网站访客统计 [不蒜子统计](http://busuanzi.ibruce.info/)
+visit_counter:
+   site: true // 总访问量和访问人数统计
+   page: true // 文章阅读量统计
 
 ## 网站访问统计
 
@@ -263,14 +316,17 @@ cnzz_anaylytics:
 ### 百度统计 参考网站: [百度统计](https://tongji.baidu.com/)
 baidu_anaylytics:
 
-### 百度文章推送  参考网站: [百度站长](http://zhanzhang.baidu.com/)
-baidu_push:
-
 ### 谷歌统计 参考网站：[谷歌统计](https://www.google-analytics.com/)
 google_anaylytics:
 
 ### 腾讯分析 参考网站：[腾讯分析](http://ta.qq.com/)
 tencent_analytics:
+
+### 百度站点认证
+baidu-site-verification:
+
+### 百度自动推送(@baidu_push: 是否启用百度自动推送)  参考网站: [百度站长资源](https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title18)
+baidu_push:
 
 ## ICON配置 (不配则启用本地Font Icon)
 fontAwesome: //cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css
@@ -283,22 +339,23 @@ version: 1.2.1  //当前主题版本号
 
 ### 主题使用技巧及功能扩展
 1. 修改新增文章Front-matter模板,修改`scaffolds`目录下的`post.md`模板
+> 模板文件内部不要保留注释部分,关键词后面请使用英文冒号
 ``` yml
----
-title: {{ title }} // 标题
-date: {{ date }}   // 时间
-categories:        // 分类
-tags:              // 标签
-comments: false    // 是否开启评论
-img:               // 自定义缩略图
----
+  ---
+  title: {{ title }} // 标题
+  date: {{ date }}   // 时间
+  categories: ['分类1','分类2'] // 分类
+  tags: ['标签1','标签2']       // 标签
+  comments: false    // 是否开启评论
+  img:               // 自定义缩略图
+  ---
 ```
 
 2. 启用站内本地搜索功能
 
 如果要使用本地站点搜索，必须安装插件hexo-generator-json-content来创建本地搜索json文件
 ```bash
-    npm i hexo-generator-json-content@2.2.0 -S
+npm i hexo-generator-json-content@2.2.0 -S
 ```
 然后修改主题配置_config.yml文件下`jsonContent`相关参数。
 
@@ -356,27 +413,26 @@ branches:
   only:
     - dev #需要监听部署的分支
 env:
- global:
+  global:
    - GH_REF: github.com/shenliyang/shenliyang.github.io.git #更改为自己git地址
 ```
 
 3. 提交代码到Github，实现自动部署
-4. 当 .travis.yml 配置文件修改完成后，将其提交到远程仓库的 hexo 分支下，此时如果之前的配置一切ok，我们应该能在 Travis CI 的博客项目主页页面中看到自动构建已经在开始执行了。上面会显示出构建过程中的日志信息及状态等。
+4. 当 `.travis.yml `配置文件修改完成后，将其提交到远程仓库的 hexo 分支下，此时如果之前的配置一切ok，我们应该能在 Travis CI 的博客项目主页页面中看到自动构建已经在开始执行了。上面会显示出构建过程中的日志信息及状态等。
 
 ## 3. 主题开发
-Gulp 执行启用主题二次开发模式
+Gulp 执行启用主题开发模式
 ``` bash
-    gulp dev
+gulp dev
 ```
 会监听样式less或者JS文件的变动。然后执行上面的【主题发布】即可。
 
 ### 运行预览
 ``` bash
-    hexo clean && hexo g && hexo s -p 4000
+hexo clean && hexo g && hexo s -p 4000
 ```
 
 监听4000端口，使用浏览器打开地址`http://localhost:4000`进行预览。
-
 
 # **其他**
 
@@ -390,33 +446,76 @@ Gulp 执行启用主题二次开发模式
 如果觉得本主题还不错，== 欢迎  [Star](https://github.com/shenliyang/hexo-theme-snippet/stargazers)下 ==，您的支持和鼓励才是后续更新最大的动力
 
 ## 宗旨
-致力主题简洁轻量，力求使用配置方便，不求页面花里胡哨，但求功能简单实用
+主题宗旨：**致力主题简洁轻量，配置方便开箱即用**，该主题项目会持续维护和更新，不会跑路，请放心使用。
+
+> Hexo框架追求的是快速、简洁，高效。喜欢绚丽，添加各种功能，折腾的朋友，建议移步至：[wordpress官网](https://cn.wordpress.org/)
+
+## 常见问题
+
+#### 1. 搜索功能不能用，content.json文件找不到？
+
+需要安装hexo-generator-json-content插件：
+
+``` bash
+npm i hexo-generator-json-content@2.2.0 -S
+```
+
+#### 2. 谷歌搜索没有响应？
+
+如果使用谷歌搜索没有响应，确定是否已经科学上网
+
+#### 3. 怎么设置首页文章缩略图自动检索文章内图片？
+
+首页文章缩略图加载规则: 自定义文章缩略图 > 自动检索文章内的图片 > defaultImgs(随机获取) > 无图模式列表
+
+在`Front-matter`中：
+指定img变量 -> 为固定缩略图
+不指定img变量 -> 自动检索文章内的图片
 
 
-## 版本更新
+#### 4. 在url哪里可以访问到本地静态文件吗？
 
-### v1.0.0
-- 提交至官方hexo-theme-snippet仓库，Snippet主题正式上线
-- 增加Travis CI 持续集成自动部署
+在主题 `source` 目录下新建文件夹，例如: `static`文件夹，然后添加静态资源，例如: xxx.pdf文件， 访问：*`http://yoursite.com/static/xxx.pdf`*
 
-### v1.1.0
-- 重构样式并优化Less文件，方便二次开发和自定义主题样式。
-- 新增 右侧社交边栏 小工具。
+#### 5. 这个主题有分页功能吗？
 
-### v1.2.0
-- 增加本地搜索和谷歌搜索
-- 增加返回顶部
+主题已经集成分页功能，在Hexo配置中修改
 
-### v1.2.1
-- 去掉highlight.js插件，启用本地高亮
-- 整理归类第三方评论
+| 参数       | 描述        | 默认值  |
+| ------------- |:-------------:| :-----:|
+| per_page     | 每页显示的文章量 (0 = 关闭分页功能) |  10 |
+| pagination_dir     | 分页目录      |   page |
 
-## 最新提交更新日志
-- 增加文章目录toc功能
-- 修改新增页面模板
-- 增加文章归档时间轴
+#### 6. 为什么右侧小工具标题都为英文呢？
 
+可能是您忘记预设网站语言，而启用默认语言了，请先在Hexo配置中调整 language 设定
+
+``` bash
+language: zh-CN
+```
+
+#### 7. 关于Hexo标签和分类方法的分歧
+
+> 只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说  `Foo, Bar` 不等于 `Bar, Foo`；而标签没有顺序和层次。
+
+如果您有过使用WordPress的经验，就很容易误解Hexo的分类方式。WordPress支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是Hexo不支持指定多个同级分类。下面的指定方法：
+
+``` bash
+categories:
+- Diary
+- Life
+```
+
+会使分类Life成为Diary的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。
+
+Hexo官方文档: [分类方法的分歧](https://hexo.io/zh-cn/docs/front-matter#分类和标签)
+
+> 没有找到我需要的问题： [提Issues](https://github.com/shenliyang/hexo-theme-snippet/issues/new)
+
+## 版本更新日志
+
+  - 增加3D云标签功能
 
 ## License
 
-[MIT](/LICENSE)
+[MIT License](/LICENSE)

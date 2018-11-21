@@ -36,6 +36,10 @@ favicon: /favicon.ico
 ## Feed
 rss: /atom.xml
 
+## Carousel
+carousel:
+  img: './img/head-img.jpg'
+  url: 'javascript:'
 
 # 各个小工具的设置
 
@@ -48,6 +52,7 @@ widgets:
   - archive
   - tagcloud
   - friends
+
 
 ## 搜索
 jsonContent:
@@ -81,6 +86,12 @@ social:
  - name: 微博
    icon: weibo
    href: /
+ - name: 微信
+   icon: weixin
+   href: /
+ - name: QQ群
+   icon: users
+   href: /
  - name: RSS
    icon: feed
    href: /atom.xml
@@ -93,8 +104,21 @@ cate_config:
 ## 文章归档设置
 arch_config:
    type: 'monthly'
+   format: 'YYYY年MM月'
    show_count: true
    order: -1
+
+## 标签云设置
+tagcloud:
+  tag3d: false
+  textColour: '#444'
+  outlineMethod: 'block'
+  outlineColour: '#FFDAB9'
+  interval: 30
+  freezeActive: true
+  frontSelect: true
+  reverse: true
+  wheelZoom: false
 
 ## 友链设置
 links:
@@ -109,7 +133,7 @@ branding:
 
 ## 设置banner背景图片
 banner:
-    img: http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner2.jpg
+    img: http://snippet.shenliyang.com/img/banner.jpg
 
 ## 首页列表底部面板
 homePanel: true
@@ -120,6 +144,9 @@ defaultImgs:
 
 ## 截取文章首页描述字数
 excerptLength: 120
+
+## 是否开启文章目录
+toc: true
 
 ## 代码高亮配置
 highlightTheme:
@@ -142,6 +169,11 @@ declaration:
   tip: |-
       商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="http://wekri.com" target="_blank">wekri</a>
 
+## 文章打赏
+reward:
+  alipay: ''
+  wepay: '../img/reward-wepay.jpg'
+  tip: 赞赏是不耍流氓的鼓励
 
 ## 主题评论
 
@@ -155,7 +187,7 @@ gitment:
   perPage: 10
 
 ### 来必力
-livere: 
+livere:
   enable: false
   livere_uid: MTAyMC8zMzA4Ny85NjQ4
 
@@ -176,7 +208,24 @@ changyan:
   appid: cytFbjWUJ
   conf: prod_74a7bae0e350931ba1210284f17d9cf7
 
-## 网站访问统计
+## Valine评论
+valine:
+   enable: true
+   appId: xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz
+   appKey: erIpQac4azoCmgfBB7Dl9maa
+   placeholder: 说点什么吧
+   notify: false
+   verify: false
+   avatar: mm
+   meta: nick,mail
+   pageSize: 10
+
+## 网站访客统计
+visit_counter:
+   site: true
+   page: true
+
+## 网站访问统计分析
 
 ### 网盟CNZZ统计
 cnzz_analytics: 1271973342
@@ -190,8 +239,11 @@ google_analytics:
 ### 腾讯分析
 tencent_analytics:
 
-### 百度文章推送
-baidu_push:
+### 百度站点认证
+baidu_site_verification:
+
+### 百度自动推送
+baidu_push: false
 
 #网站主题配置
 since: 2017
