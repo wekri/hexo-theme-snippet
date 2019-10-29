@@ -26,9 +26,9 @@ menu:
 - page: 时间轴
   url: /archives/
   icon:
-- page: 阿里云服务器双11团购1折起
-  url: https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link
-  icon:
+#- page: 阿里云服务器双11团购1折起
+#  url: https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link
+#  icon:
 
 ## favicon
 favicon: /favicon.ico
@@ -37,9 +37,9 @@ favicon: /favicon.ico
 rss: /atom.xml
 
 ## Carousel
-carousel:
-  img: './img/head-img11.jpg'
-  url: 'https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link'
+#carousel:
+#  img: './img/head-img11.jpg'
+#  url: 'https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link'
 
 # 各个小工具的设置
 
@@ -71,9 +71,6 @@ notification: |-
             <br/>
             CSDN博客：<a href="http://blog.csdn.net/eacter" title="wekri" target="_blank">wekri</a>
             </p>
-            <p>
-            2019阿里云服务器双11团购1折起：<a href="https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link" title="wekri" target="_blank">点击开团</a>
-            </P>
 
 ## 社交设置
 social:
@@ -127,7 +124,7 @@ tagcloud:
 links:
   - CSDN博客: http://blog.csdn.net/eacter
   - 码云: https://gitee.com/wekri
-  - 阿里云服务器双11团购1折起: https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link
+#  - 阿里云服务器双11团购1折起: https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link
 
 
 # 主题自定义个性化配置
