@@ -26,8 +26,8 @@ menu:
 - page: 时间轴
   url: /archives/
   icon:
-- page: 阿里云服务器双11团购1折起
-  url: https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link
+- page: 阿里云大礼包
+  url: https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=6t6w0xtx
   icon:
 
 ## favicon
@@ -38,8 +38,8 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
-  img: './img/head-img11.jpg'
-  url: 'https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link'
+  img: './img/head-img.jpg'
+  url: 'https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=6t6w0xtx'
 
 # 各个小工具的设置
 
@@ -72,7 +72,7 @@ notification: |-
             CSDN博客：<a href="http://blog.csdn.net/eacter" title="wekri" target="_blank">wekri</a>
             </p>
             <p>
-            2019阿里云服务器双11团购1折起：<a href="https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link" title="wekri" target="_blank">点击开团</a>
+            阿里云大礼包，最高2000元现金：<a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=6t6w0xtx" title="wekri" target="_blank">点击开团</a>
             </P>
 
 ## 社交设置
@@ -127,7 +127,7 @@ tagcloud:
 links:
   - CSDN博客: http://blog.csdn.net/eacter
   - 码云: https://gitee.com/wekri
-  - 阿里云服务器双11团购1折起: https://www.aliyun.com/1111/2019/group-buying-share?ptCode=0AECA91757FF4800315F610BA10EDA8D647C88CF896EF535&userCode=6t6w0xtx&share_source=copy_link
+  - 阿里云大礼包，最高抵2000元现金: https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=6t6w0xtx
 
 
 # 主题自定义个性化配置
